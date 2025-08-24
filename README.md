@@ -22,26 +22,32 @@ df.head(5)
 ```
 Result: 
 <img width="385" height="180" alt="image" src="https://github.com/user-attachments/assets/9d14e8e2-3260-46b3-afb6-96055b1f2d8d" />
+
 ### Checking column type and fix errors
 ```
 df.info()
 ```
 <img width="330" height="211" alt="image" src="https://github.com/user-attachments/assets/26a2ea3a-531f-42f0-8987-d63b1e52e73c" />
+
 So that I need to convert some objects type to string
 ```
 df = df.convert_dtypes()
 df.info()
 ```
 <img width="299" height="232" alt="image" src="https://github.com/user-attachments/assets/253435e6-d546-41db-b9b4-80d12ae7eced" />
+
 ### Analysis statistic data
 ```
 df.describe()
 ```
 <img width="329" height="282" alt="image" src="https://github.com/user-attachments/assets/34aa5217-f73d-45b3-99d3-f311e7d626d7" />
+
+
 *After checking, exploring and summarizing data, this source need to analyse details which is influnce and some categories affect the data
 💸 Tip value influencers
 🚬 Do people who smoke give more tips?
 Let's figure out the difference between smokers and non-smokers in terms of their behavior and purchasing habits in public catering establishments.
+
 #Separate smokers and non-smokers
 ```
 smokers_df = df[df['smoker']=='Yes']
@@ -49,8 +55,11 @@ non_smokers_df = df[df['smoker']=='No']
 smokers_df.head(5)
 non_smokers_df.head(4)
 ```
+
 For Smokers:
 <img width="387" height="181" alt="image" src="https://github.com/user-attachments/assets/d28b2f04-51a3-4e10-a061-9504418ee26c" />
+
+
 For Non-smokers:
 <img width="403" height="181" alt="image" src="https://github.com/user-attachments/assets/442f2221-63be-43df-bc1e-4939f668acbf" />
 #Compare their measures of central tendency
