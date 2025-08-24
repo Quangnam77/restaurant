@@ -166,10 +166,12 @@ plt.tight_layout()
 plt.show()
 ```
 <img width="906" height="260" alt="image" src="https://github.com/user-attachments/assets/c73ca6f9-2b42-4fcf-968c-b82d864bc009" />
-Insight: Comparison Insights
 
+
+Insight: Comparison Insights
 Median gap confirmed: Smokers’ distribution shifts slightly higher (more around 3), while non-smokers lean lower (around 2).
 Extreme values: Smokers are more likely to leave unusually high tips (≥7), which pulls their mean up slightly.
 Consistency: Non-smokers show more clustering at lower values, suggesting less variability.
+
 👉 Takeaway:
 Smokers tend to give slightly higher tips and more extreme outliers, while non-smokers are more conservative and clustered at the lower end.
