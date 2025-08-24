@@ -121,3 +121,55 @@ all_mct = pd.DataFrame(all_vals_dict)
 all_mct
 ```
 <img width="302" height="151" alt="image" src="https://github.com/user-attachments/assets/dec55058-162c-432e-94c9-68d3ae45e829" />
+
+Insights:
+
+1/Range (spread of data)
+Both smokers and non-smokers have the same minimum (1), but smokers can reach a maximum of 10, while non-smokers peak at 9.
+Suggests smokers might give slightly higher extreme values.
+2/ Average behavior
+The mean values are very close (~3).
+Smokers’ mean (3.01) is just a bit higher than non-smokers (2.99), but the difference is tiny → not statistically significant unless tested further.
+3/ Median difference
+Smokers’ median = 3.0, non-smokers’ median = 2.74.
+This gap shows non-smokers tend to cluster slightly lower than smokers.
+Suggests distribution may be slightly skewed.
+4/Overall (Common)
+Aggregated mean and median sit in between the two groups, as expected.
+
+To more understand and get more details, the histogram is applied to make it clear
+```
+fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+# 1st chart: Whole dataset
+axes[0].hist(df.tip, color='#74b9ff')
+axes[0].set_xlabel('Tip value')
+axes[0].set_ylabel('Frequency')
+axes[0].set_title('Whole dataset tip values')
+axes[0].grid(True)
+
+# 2nd chart: Smokers
+axes[1].hist(smokers_df.tip, color='#ff7675')
+axes[1].set_xlabel('Tip value')
+axes[1].set_ylabel('Frequency')
+axes[1].set_title('Smokers tip values')
+axes[1].grid(True)
+
+# 3rd chart: Non-Smokers
+axes[2].hist(non_smokers_df.tip, color='#55efc4')
+axes[2].set_xlabel('Tip value')
+axes[2].set_ylabel('Frequency')
+axes[2].set_title('Non-Smokers tip values')
+axes[2].grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+<img width="906" height="260" alt="image" src="https://github.com/user-attachments/assets/c73ca6f9-2b42-4fcf-968c-b82d864bc009" />
+Insight: Comparison Insights
+
+Median gap confirmed: Smokers’ distribution shifts slightly higher (more around 3), while non-smokers lean lower (around 2).
+Extreme values: Smokers are more likely to leave unusually high tips (≥7), which pulls their mean up slightly.
+Consistency: Non-smokers show more clustering at lower values, suggesting less variability.
+👉 Takeaway:
+Smokers tend to give slightly higher tips and more extreme outliers, while non-smokers are more conservative and clustered at the lower end.
